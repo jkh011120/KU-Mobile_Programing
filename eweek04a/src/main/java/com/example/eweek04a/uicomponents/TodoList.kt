@@ -57,13 +57,14 @@ fun TodoList(todoList: MutableList<Item>, modifier: Modifier = Modifier) {
                 }
             }
         } else {
-            todoList.forEachIndexed{ index, item ->
-                Card(
-                    modifier = modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 10.dp)
-                ){
-                    if(item.status == TodoStatus.PENDING) {
+            todoList.forEachIndexed { index, item ->
+                if (item.status == TodoStatus.PENDING) {
+                    Card(
+                        modifier = modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 10.dp)
+                    ) {
+
                         Row {
                             TodoCheckbox(checked = item.status == TodoStatus.COMPLETED) { isChecked ->
                                 todoList[index] = item.copy(
@@ -73,9 +74,9 @@ fun TodoList(todoList: MutableList<Item>, modifier: Modifier = Modifier) {
                             }
                             TodoItem(item = item)
                         }
+
                     }
                 }
-
             }
         }
     }
