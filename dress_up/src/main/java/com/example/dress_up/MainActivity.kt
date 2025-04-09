@@ -1,4 +1,4 @@
-package com.example.eweek05a
+package com.example.dress_up
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,8 +8,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.eweek05a.ui.theme.MyLecETheme
-import com.example.eweek05a.uicomponents.MainScreen
+import com.example.dress_up.ui.theme.MyLecETheme
+import com.example.dress_up.uicomponents.MainScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +18,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyLecETheme {
                 MainScreen()
+//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+//                    Greeting(
+//                        name = "Android",
+//                        modifier = Modifier.padding(innerPadding)
+//                    )
+//                }
             }
         }
     }
