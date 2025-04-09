@@ -9,16 +9,19 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.dress_up.model.IMGFactory
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.dress_up.viewmodel.ImageViewModel
 
 @Composable
-fun MainScreen(modifier: Modifier = Modifier) {
-    val potato = remember { IMGFactory.makeIMGList() }
+fun MainScreen(
+    modifier: Modifier = Modifier,
+    imageViewModel: ImageViewModel = viewModel()
+) {
+    val potato = imageViewModel.imageList
     val orientation = LocalConfiguration.current.orientation
     //세로
     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
@@ -38,8 +41,8 @@ fun MainScreen(modifier: Modifier = Modifier) {
                 CheckBoxList(potato)
             }
         }
-    }else{
-        Row(){
+    } else {
+        Row() {
             Box(
                 modifier = modifier
                     .fillMaxHeight()
