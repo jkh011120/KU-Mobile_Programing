@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
@@ -25,12 +26,12 @@ fun MainScreen(
     val orientation = LocalConfiguration.current.orientation
     //세로
     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-
+        Text("202315318 정기현")
         Column() {
             Box(
                 modifier = modifier
                     .fillMaxWidth()
-                    .height(400.dp)
+                    .height(350.dp)
             ) {
                 ShowImage(potato)
             }
@@ -42,11 +43,12 @@ fun MainScreen(
             }
         }
     } else {
+        Text("202315318 정기현")
         Row() {
             Box(
                 modifier = modifier
                     .fillMaxHeight()
-                    .width(400.dp)
+                    .width(350.dp)
             ) {
                 ShowImage(potato)
             }
