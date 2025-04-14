@@ -35,7 +35,6 @@ fun MainScreen(
         ) {
             ImageList(imageList = imageList)
         }
-
     } else {
         Row(
             modifier = Modifier
