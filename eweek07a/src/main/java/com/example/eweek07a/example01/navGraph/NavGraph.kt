@@ -44,6 +44,5 @@ fun NavGraph(
             Screen_D()
         }
 
-
     }
 }
